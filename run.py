@@ -5,7 +5,7 @@ from lxml import etree
 import json5  # 需要先安装json5包: pip install json5
 
 # 在文件开头添加配置文件的读取
-with open('config_timberwolves.json5', 'r', encoding='utf-8') as f:
+with open('config_celtics.json5', 'r', encoding='utf-8') as f:
     config = json5.load(f)
 
 # 从配置文件中获取变量

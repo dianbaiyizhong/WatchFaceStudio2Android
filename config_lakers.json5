@@ -9,6 +9,7 @@
   "appId": "com.nntk.watch.nba.lakers",
   // 把你图片目录配置进来
   "drawable_dir": [
+    '/Users/huanghaoming/Documents/GitHub/watch-face-studio-project/espn_lakers',
     '/Users/huanghaoming/Documents/GitHub/watch-face-studio-project/movie_lakers',
     '/Users/huanghaoming/Documents/GitHub/watch-face-studio-project/lakers_res/'
   ],
@@ -23,7 +24,8 @@
   // 无非是为了能修改图片动画的速率，将要调整的速率设置在这里
   "frame_rates": [
     "45",
-    "60"
+    "60",
+    "30"
   ],
   "outputDir": "/Users/huanghaoming/Documents/GitHub/nba-watch-face"
 }
