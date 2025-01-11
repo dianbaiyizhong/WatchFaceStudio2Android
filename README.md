@@ -1,0 +1,2 @@
+# WatchFaceStudio2Android
+三星的WatchFaceStudio转化为android studio工程，方便调整参数
