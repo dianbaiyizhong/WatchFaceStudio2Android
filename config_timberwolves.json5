@@ -1,16 +1,16 @@
 {
   // 输入你wfs工具输出的aab文件路径
-  "wfs_build_file_path": "/Users/huanghaoming/Documents/GitHub/watch-face-studio-project/build/lakers/com.nntk.nba.lakers.aab",
+  "wfs_build_file_path": "/Users/huanghaoming/Documents/GitHub/watch-face-studio-project/build/com.nntk.nba.timberwolves.aab",
   // 给你的工程起个英文名
-  "project_name": "watchface_lakers",
+  "project_name": "watchface_timberwolves",
   // 起app名字
-  "app_name": "洛杉矶湖人",
+  "app_name": "明尼苏达森林狼",
   // appid
-  "appId": "com.nntk.watch.nba.lakers",
+  "appId": "com.nntk.watch.nba.timberwolves",
   // 把你图片目录配置进来
   "drawable_dir": [
-    '/Users/huanghaoming/Documents/GitHub/watch-face-studio-project/movie_lakers',
-    '/Users/huanghaoming/Documents/GitHub/watch-face-studio-project/lakers_res/'
+    '/Users/huanghaoming/Documents/GitHub/watch-face-studio-project/movie_timberwolves',
+    '/Users/huanghaoming/Documents/GitHub/watch-face-studio-project/timberwolves_res/upscayl_png_realesrgan-x4plus-anime_2x'
   ],
   // 个别图片
   "drawable_files": [
@@ -18,7 +18,7 @@
   ],
   // 把你字体文件路径配置进来
   "font_files": [
-    '/Users/huanghaoming/Documents/GitHub/watch-face-studio-project/font_lakers.TTF'
+    '/Users/huanghaoming/Documents/GitHub/watch-face-studio-project/font_timberwolves.TTF'
   ],
   // 无非是为了能修改图片动画的速率，将要调整的速率设置在这里
   "frame_rates": [

@@ -5,7 +5,7 @@ from lxml import etree
 import json5  # 需要先安装json5包: pip install json5
 
 # 在文件开头添加配置文件的读取
-with open('config.json5', 'r', encoding='utf-8') as f:
+with open('config_timberwolves.json5', 'r', encoding='utf-8') as f:
     config = json5.load(f)
 
 # 从配置文件中获取变量
@@ -17,6 +17,7 @@ drawable_dir = config.get('drawable_dir', [])
 font_files = config.get('font_files', [])
 drawable_files = config.get('drawable_files', [])
 frame_rates = config.get('frame_rates', [])
+output_dir = config.get('outputDir')
 
 
 def prettify_xml_string_lxml(xml_string):
@@ -73,7 +74,6 @@ if __name__ == '__main__':
         # 解压文件
         zip_ref.extractall(extract_dir)
 
-        print('文件已解压到:', extract_dir)
     watch_face_xml_dir = os.path.join(extract_dir, 'base', 'res', 'raw', 'watchface.xml')
     # 格式化xml文件，使内容好看一点，调用prettify_xml_string_lxml
     with open(watch_face_xml_dir, 'r') as f:
@@ -147,3 +147,8 @@ if __name__ == '__main__':
     # 将修改后的 XML 写回文件
     tree.write(wfx_dest, pretty_print=True,
                xml_declaration=True, encoding='utf-8')
+
+    # 将project_name复制到指定目录下,如果存在，则删除
+    if os.path.exists(os.path.join(output_dir, project_name)):
+        shutil.rmtree(os.path.join(output_dir, project_name))
+    shutil.move(project_name, os.path.join(output_dir, project_name))
