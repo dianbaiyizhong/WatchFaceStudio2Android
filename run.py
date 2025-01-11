@@ -2,30 +2,21 @@ import os
 import shutil
 import zipfile
 from lxml import etree
+import json5  # 需要先安装json5包: pip install json5
 
-# 输入你wfs工具输出的aab文件路径
-wfs_build_file_path = f"/Users/huanghaoming/Documents/GitHub/nba-watch-face/build/rod_timberwolves/com.watchfacestudio.Test_51844260478405176971266896599403_debug.aab"
-# 给你的工程起个英文名
-project_name = "watchface_timberwolves"
-# 起app名字
-app_name = "明尼苏达森林狼"
-# appid
-appId = "com.nntk.watch.nba.timberwolves"
+# 在文件开头添加配置文件的读取
+with open('config.json5', 'r', encoding='utf-8') as f:
+    config = json5.load(f)
 
-# 把你图片目录配置进来
-drawable_dir = [
-    '/Users/huanghaoming/Documents/GitHub/nba-watch-face/watch-face-studio-project/timberwolves_res/upscayl_png_realesrgan-x4plus-anime_2x',
-    '/Users/huanghaoming/Documents/GitHub/nba-watch-face/watch-face-studio-project/movie_timberwolves']
-
-drawable_files = [
-    '/Users/huanghaoming/Documents/GitHub/nba-watch-face/watch-face-studio-project/empty.png'
-]
-
-# 把你字体文件路径配置进来
-font_files = ['/Users/huanghaoming/Documents/GitHub/nba-watch-face/watch-face-studio-project/font_timberwolves.TTF']
-
-# 无非是为了能修改图片动画的速率，将要调整的速率设置在这里
-frame_rates = ["45", "60"]
+# 从配置文件中获取变量
+project_name = config.get('project_name')
+app_name = config.get('app_name')
+appId = config.get('appId')
+wfs_build_file_path = config.get('wfs_build_file_path')
+drawable_dir = config.get('drawable_dir', [])
+font_files = config.get('font_files', [])
+drawable_files = config.get('drawable_files', [])
+frame_rates = config.get('frame_rates', [])
 
 
 def prettify_xml_string_lxml(xml_string):
@@ -54,6 +45,7 @@ def replace_template(key, value):
 
 
 if __name__ == '__main__':
+
     # 复制android-studio-template为project_name，如果存在就删除再复制
     if os.path.exists(project_name):
         shutil.rmtree(project_name)
