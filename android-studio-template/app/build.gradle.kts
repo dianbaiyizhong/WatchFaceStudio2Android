@@ -30,3 +30,22 @@ android {
 
 }
 
+
+tasks.whenTaskAdded {
+    if (this.name == "assembleRelease") {
+        this.doLast {
+            val outputDir = File(layout.buildDirectory.asFile.get(), "outputs/apk/release")
+            val targetDir = File(outputDir, "renamed")
+            targetDir.mkdirs()
+
+            copy {
+                from(outputDir)
+                into(targetDir)
+                include("*.apk")
+                rename { _ ->
+                    "${rootProject.name}_${android.defaultConfig.versionName}.apk"
+                }
+            }
+        }
+    }
+}
