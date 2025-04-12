@@ -19,3 +19,6 @@ apksigner sign \
 ```
 
 > zipalign和apksigner在android sdk的build-tools目录下，macos在~/Library/Android/sdk
+
+
+> adb uninstall 记得先卸载原来的
