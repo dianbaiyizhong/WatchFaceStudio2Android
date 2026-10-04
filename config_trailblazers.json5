@@ -1,0 +1,29 @@
+{
+  // 输入你wfs工具输出的aab文件路径
+  "wfs_build_file_path": "/Users/huanghaoming/Documents/GitHub/watch-face-studio-project/build/com.nntk.nba.trailblazers.aab",
+  // 给你的工程起个英文名
+  "project_name": "watchface_trailblazers",
+  // 起app名字
+  "app_name": "波特兰开拓者",
+  // appid
+  "appId": "com.nntk.watch.nba.trailblazers",
+  // 把你图片目录配置进来
+  "drawable_dir": [
+    '/Users/huanghaoming/Documents/GitHub/watch-face-studio-project/movie_trailblazers',
+    '/Users/huanghaoming/Documents/GitHub/watch-face-studio-project/trailblazers_res/'
+  ],
+  // 个别图片
+  "drawable_files": [
+    '/Users/huanghaoming/Documents/GitHub/watch-face-studio-project/empty.png'
+  ],
+  // 把你字体文件路径配置进来
+  "font_files": [
+    '/Users/huanghaoming/Documents/GitHub/watch-face-studio-project/font_trailblazers.TTF'
+  ],
+  // 无非是为了能修改图片动画的速率，将要调整的速率设置在这里
+  "frame_rates": [
+    "30",
+    "45"
+  ],
+  "outputDir": "/Users/huanghaoming/Documents/GitHub/nba-watch-face"
+}

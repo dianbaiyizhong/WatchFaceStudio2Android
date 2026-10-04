@@ -24,8 +24,7 @@
   // 无非是为了能修改图片动画的速率，将要调整的速率设置在这里
   "frame_rates": [
     "30",
-    "45",
-    "30"
+    "45"
   ],
   "outputDir": "/Users/huanghaoming/Documents/GitHub/nba-watch-face"
 }
